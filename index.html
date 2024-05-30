@@ -1,0 +1,338 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> MYSTERY</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins';
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .mainbox {
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        .nav {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 160px;
+            justify-content: space-between;
+            border-bottom: 1px solid rgb(133, 133, 133);
+        }
+
+        .img {
+            float: left;
+        }
+
+        .img img {
+            height: 150px;
+            width: 200px;
+        }
+
+        .links {
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .links ul {
+            display: flex;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .links ul li {
+            margin: 20px;
+            padding: 10px;
+            list-style-type: none;
+            text-decoration: none;
+        }
+
+        .links ul li a {
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            padding: 20px;
+            transition: all 0.5s ease-out;
+        }
+
+        .getintouch {
+            border: 1px solid rgb(133, 133, 133);
+            border-radius: 20px;
+            transition: all 0.5s ease-out;
+        }
+
+        .links ul li a:hover {
+            text-shadow: 0 0 10px #ffffff75, 0 0 30px #ffffff, 0 0 20px #ffffff;
+        }
+
+        .getintouch:hover {
+            background-color: white;
+            color: black;
+            box-shadow: 0 0 10px #ffffff75, 0 0 30px #ffffff, 0 0 20px #ffffff;
+        }
+
+        .content-box {
+            width: 100%;
+            border-bottom: 1px solid rgb(133, 133, 133);
+            margin: 70px auto 20px auto;
+        }
+
+        .introbox {
+            display: flex;
+            width: 80%;
+            margin: auto;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .text {
+            display: flex;
+            flex-direction: column;
+            color: white;
+            margin: 40px;
+            padding: 35px 30px;
+        }
+
+        .text h6 {
+            font-family: 'Courier Prime';
+            padding: 20px;
+            font-size: 1em;
+            transition: all 0.5 ease-out;
+        }
+
+        .text h1 {
+            font-family: 'Poppins';
+            font-size: 10vh;
+            padding: 20px;
+            transition: all 0.5s ease-out;
+        }
+
+        .text h1:hover {
+            transform: translateY(-10px);
+            cursor: pointer;
+            color: grey;
+        }
+
+        .text h1::after {
+            content: "!";
+            top: 0;
+            position: absolute;
+            right: -0.4em;
+            font-size: 1.5em;
+            color: grey;
+            opacity: 0;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .text h1:hover::after {
+            opacity: 1;
+        }
+
+        .img2 {
+            height: 200px;
+            width: 300px;
+            margin-right: 100px;
+            transition: all 0.5s ease-out;
+        }
+
+        .img2:hover {
+            transform: scale(1.4);
+            cursor: pointer;
+        }
+
+        .img2 img {
+            height: 200px;
+            width: 300px;
+        }
+
+        .cards {
+            margin: 30px;
+        }
+
+        .heading h1 {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            color: white;
+            font-size: 35px;
+            transition: all 0.5s ease-out;
+            font-family: "Roboto Slab";
+
+        }
+
+        .heading h1:hover {
+            color: grey;
+            cursor: pointer;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px auto 0 auto;
+            width: 80%;
+            transition: all 0.5 ease-in;
+        }
+
+        .card {
+            width: calc(33.33% - 20px);
+            border: 1px solid #999;
+            padding: 10px;
+            background-color: black;
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 20px;
+        }
+
+        .card:hover {
+            box-shadow: 0 0 10px #ffffff75, 0 0 30px #ffffff, 0 0 20px #ffffff;
+        }
+
+        .card img {
+            width: 100%;
+            height: 300px;
+        }
+
+        .card p {
+            margin-top: 10px;
+            color: white;
+            font-style: italic;
+        }
+
+        .card span {
+            color: white;
+        }
+
+        @media screen and (max-width: 1050px) {
+            .nav {
+                flex-direction: column;
+                align-items: center;
+                height: auto;
+            }
+
+            .links {
+                margin-top: 10px;
+            }
+
+            .links ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .links ul li {
+                margin: 10px 0;
+            }
+
+            .content-box {
+                margin-top: 20px;
+            }
+
+            .introbox {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .text {
+                text-align: center;
+                margin: 20px 0;
+            }
+
+            .img2 {
+                margin: 20px 0;
+            }
+
+            .card-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 80%;
+                margin: 20px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mainbox">
+        <div class="nav">
+            <div class="img"><img src="navimg.png" alt="navimg"></div>
+            <div class="links">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#getintouch" class="getintouch">Get In Touch</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-box">
+            <div class="introbox">
+                <div class="text">
+                    <p>
+                    <h6>Hello World I'm</h6>
+                    </p>
+                    <p>
+                    <h1>Sanidhya</h1>
+                    </p>
+                    <p>
+                    <h6>From Kanpur</h6>
+                    </p>
+                </div>
+                <div class="img2">
+                    <img src="content.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="cards">
+            <div class="heading">
+                <h1>MY SKILLS</h1>
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <img src="card1.jpg" alt="Card 1">
+                    <p>PHOTO EDITING </p>
+                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, ab architecto ex, rerum amet
+                        placeat
+                        error reiciendis animi blanditiis possimus eligendi minus hic modi nostrum quidem, veritatis
+                        ipsa quis recusandae?</span>
+                </div>
+                <div class="card">
+                    <img src="card2.jpg" alt="Card 2">
+                    <p>VIDEO EDITING</p>
+                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, ab architecto ex, rerum amet
+                        placeat
+                        error reiciendis animi blanditiis possimus eligendi minus hic modi nostrum quidem, veritatis
+                        ipsa quis recusandae?</span>
+                </div>
+                <div class="card">
+                    <img src="card3.avif" alt="Card 3">
+                    <p>WEB DESIGNING</p>
+                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, ab architecto ex, rerum amet
+                        placeat
+                        error reiciendis animi blanditiis possimus eligendi minus hic modi nostrum quidem, veritatis
+                        ipsa quis recusandae?</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
